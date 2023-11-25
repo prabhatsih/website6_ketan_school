@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 *{
     margin: 0;
@@ -12,11 +13,15 @@
 .text-orange{color: #EA512E;}
 .text-black{color: #1B0238;}
 .text-silver{color: #6B6B84;}
+.bg-light-orange{background: #fdf6ed;}
 .bg-orange{background: #EA512E;}
 .bg-yellow{background: #f5890d !important;}
 .mt-10{margin-top: 100px;}
 .mt-15{margin-top: 150px;}
 .mt-20{margin-top: 200px;}
+.pb-70{padding-bottom: 70px;}
+.pt-100{padding-top: 100px;}
+.pb-100{padding-bottom: 100px;}
 .btn{
     color: #fff;
     display: inline-block;
@@ -40,7 +45,34 @@ p {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
 }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: #1b0238;
+    font-family: "Catamaran", sans-serif;
+    font-weight: bold;
+}
 /* Universal CSS End */
+
+/* Nav section Start */
+a.active{
+    color: #EA512E !important;
+}
+a.nav-link:hover,
+a.dropdown-item:hover{
+    color: #EA512E !important;
+    transition: 0.2s linear;
+}
+.dropdown-menu{
+    width: 280px;
+    border: none;
+    border-radius: 0px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0px 0px 15px 0px #ccc;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+    margin-top: 10px;
+}
+/* Nav section End */
 
 /* Banner Section Start */
 .banner{
@@ -76,9 +108,114 @@ p {
     font-weight: bold;
     margin-bottom: 20px;
 }
-
 /* Banner Section End */
+/* Who we are section start */
+.who span,
+.popular span,
+.teacher span,
+.core-value span{
+    font-weight: 600;
+    font-size: 20px;
+    color: #EA512E;
+    font-family: 'Sacramento', cursive;
+}
+.who h3,
+.popular h3,
+.teacher h3,
+.core-value h3{
+    font-size: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.who ul li{
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.who ul li span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #EA512E;
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 6px;
+    transition: all 0.5s;
+    font-family: "Catamaran", sans-serif;
+}
+.who ul li:hover span{
+    background: #f5890d;
+    transition: all 1s ease-in;
+}
+/* Who we are section end */
+/* Popular class section start */
+.popular .card:hover img{
+    /* transform: scale(1.07); */
+    transform: rotate(2deg) scale(1.2);
+    
+    transition: all 0.3s linear;
+}
+/* Popular class section end */
 
+/* core value section start */
+.core-value .number{
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 1.5%;
+    margin-right: 20px;
+    font-size: 25px;
+    color: #1b0238;
+    border: 3px solid #fff;
+    outline: 1px solid #e5e4e4;
+    outline-offset: 2px;
+    transition: 0.5s;
+    cursor: pointer;
+    font-family: "Catamaran", sans-serif;
+}
+.core-value .number:hover{
+    color: #fff;
+    transition: 0.5s;
+    background: #EA512E !important;
+    outline-color: #EA512E;
+}
+/* core value section end */
+
+/* Teacher Section Start */
+.teacher .social-media{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: -70px;
+    transition: all 0.5s ease-in;
+}
+.teacher .teacher-image:hover .social-media{
+    margin-bottom: 0px;
+    transition: all 0.5s ease-out;
+}
+.teacher .social-media li{
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    background: #EA512E;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+.teacher .social-media li a{
+    color: white;
+}
+.teacher .social-media li:hover{
+    background: #f5890d;
+    transition: 0.3s ease;
+}
+/* /Teacher Section End */
 
 
 
