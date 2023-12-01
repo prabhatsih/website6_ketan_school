@@ -9,12 +9,16 @@
     font-family: "Catamaran", sans-serif;
     font-size: 16px;
 }
+:root{
+    --bg-light-orange: #fdf6ed;
+}
 /* Universal CSS Start */
 .text-orange{color: #EA512E;}
 .text-black{color: #1B0238;}
 .text-silver{color: #6B6B84;}
 .bg-light-orange{background: #fdf6ed;}
 .bg-orange{background: #EA512E;}
+.bg-light-yellow{background: #fee9ca;}
 .bg-yellow{background: #f5890d !important;}
 .mt-10{margin-top: 100px;}
 .mt-15{margin-top: 150px;}
@@ -49,6 +53,11 @@ p {
     color: #1b0238;
     font-family: "Catamaran", sans-serif;
     font-weight: bold;
+}
+img{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
 }
 /* Universal CSS End */
 
@@ -113,7 +122,8 @@ a.dropdown-item:hover{
 .who span,
 .popular span,
 .teacher span,
-.core-value span{
+.core-value span,
+.testimonial span{
     font-weight: 600;
     font-size: 20px;
     color: #EA512E;
@@ -122,11 +132,50 @@ a.dropdown-item:hover{
 .who h3,
 .popular h3,
 .teacher h3,
-.core-value h3{
+.core-value h3,
+.testimonial h3{
     font-size: 45px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.who .image{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.who .image::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ea512e;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transition: 0.5s;
+    animation: border-transform-default 10s linear infinite alternate forwards;
+}
+.who .image img{
+    border-radius: 50%;
+    padding: 20px;
+}
+.who .image::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f5890d;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transition: 0.5s;
+    animation: border-transform-default 50s linear infinite alternate forwards;
+}
+
 .who ul li{
     line-height: 40px;
     font-weight: bold;
@@ -184,10 +233,18 @@ a.dropdown-item:hover{
     transition: 0.5s;
     background: #EA512E !important;
     outline-color: #EA512E;
+    z-index: 1;
 }
 /* core value section end */
 
 /* Teacher Section Start */
+.teacher{
+    background: url(../img/teacher-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -9 !important;
+}
 .teacher .social-media{
     position: absolute;
     bottom: 0;
@@ -196,6 +253,24 @@ a.dropdown-item:hover{
     margin-bottom: -70px;
     transition: all 0.5s ease-in;
 }
+.teacher .teacher-image{
+    z-index: 9 !important;
+}
+.teacher .teacher-image::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #ea512e;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transition: 0.5s;
+    animation: border-transform-default 20s linear infinite alternate forwards;
+}
+
 .teacher .teacher-image:hover .social-media{
     margin-bottom: 0px;
     transition: all 0.5s ease-out;
@@ -217,8 +292,95 @@ a.dropdown-item:hover{
 }
 /* /Teacher Section End */
 
+/* Testimonial Section Start */
+.card.teacher{
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 49%;
+    border: none;
+    background-color: #fee9ca;;
+}
+.card.teacher div{
+    width: 65px;
+    height: auto;
+    line-height: 75px;
+    border-radius: 50%;
+    background: #fff;
+    margin: auto;
+    transition: all 0.3s linear;
+    margin-bottom: 10px;
+}
+.card.teacher:hover div{
+    background:#EA512E;
+    transition: all 0.3s linear ;
+}
+.card.teacher:hover div .fa-quote-left{
+    color: #fff !important;
+    transition: all 0.3s linear;
+}
+
+.testimonial .nav-button button{
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 10px;
+    text-align: center;
+    border-radius: 50%;
+    background: #EA512E;
+    transition: 0.3s linear;
+    margin-left: -40px;
+    margin-right: -40px
+}
+.testimonial .nav-button button:hover{
+    background: #f5890d;
+    transition: 0.3s linear;
+}
+/* /Testimonial Section End */
+
+/* Tetimoniel Section Start */
+.slider-wrap{
+    position: relative;
+    overflow-x: hidden;
+    height: 100px;
+}
+.slider-main{
+    position: absolute;
+    width: 200%;
+}
+.item{
+    width: 400px;
+    display: inline-block;
+    
+}
+.item .card{transition: 0.5s ease-in-out;}
+/* Tetimoniel Section End */
 
 
+
+
+
+
+
+
+
+
+
+
+
+@keyframes rotate2 {
+    0%{
+        transform: scale3d(1, 1, 1);
+    }
+    50%{
+        transform: scale3d(0.7, 0.7, 0.7) rotate3d(0, 0, 1, -3deg);;
+    }
+    100%{
+        transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 3deg);;
+    }
+}
 
 @keyframes move {
     0%{}
@@ -227,4 +389,28 @@ a.dropdown-item:hover{
 @keyframes move2 {
     0%{}
     100%{left:53%;}
+}
+
+@keyframes border-transform-default {
+    0%, 100% {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+    }
+    14% {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    }
+    28% {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    }
+    42% {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    }
+    56% {
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    }
+    70% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    }
+    84% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    }
 }
